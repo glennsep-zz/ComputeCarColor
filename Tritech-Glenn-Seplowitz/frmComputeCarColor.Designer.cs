@@ -45,7 +45,7 @@
             // lblStartPoint
             // 
             this.lblStartPoint.AutoSize = true;
-            this.lblStartPoint.Location = new System.Drawing.Point(6, 27);
+            this.lblStartPoint.Location = new System.Drawing.Point(9, 16);
             this.lblStartPoint.Name = "lblStartPoint";
             this.lblStartPoint.Size = new System.Drawing.Size(289, 13);
             this.lblStartPoint.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.lblRedColor.AutoSize = true;
             this.lblRedColor.ForeColor = System.Drawing.Color.Red;
-            this.lblRedColor.Location = new System.Drawing.Point(301, 27);
+            this.lblRedColor.Location = new System.Drawing.Point(9, 38);
             this.lblRedColor.Name = "lblRedColor";
             this.lblRedColor.Size = new System.Drawing.Size(27, 13);
             this.lblRedColor.TabIndex = 1;
@@ -85,29 +85,29 @@
             this.grpGetCarColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpGetCarColor.Location = new System.Drawing.Point(12, 98);
             this.grpGetCarColor.Name = "grpGetCarColor";
-            this.grpGetCarColor.Size = new System.Drawing.Size(649, 100);
+            this.grpGetCarColor.Size = new System.Drawing.Size(649, 108);
             this.grpGetCarColor.TabIndex = 3;
             this.grpGetCarColor.TabStop = false;
-            this.grpGetCarColor.Text = "Get the Car Color";
+            this.grpGetCarColor.Text = "Get the Future Car Color";
             // 
             // lblComputedCarColor
             // 
             this.lblComputedCarColor.AutoSize = true;
-            this.lblComputedCarColor.ForeColor = System.Drawing.Color.Red;
-            this.lblComputedCarColor.Location = new System.Drawing.Point(102, 60);
+            this.lblComputedCarColor.ForeColor = System.Drawing.Color.Black;
+            this.lblComputedCarColor.Location = new System.Drawing.Point(9, 83);
             this.lblComputedCarColor.Name = "lblComputedCarColor";
-            this.lblComputedCarColor.Size = new System.Drawing.Size(27, 13);
+            this.lblComputedCarColor.Size = new System.Drawing.Size(48, 13);
             this.lblComputedCarColor.TabIndex = 4;
-            this.lblComputedCarColor.Text = "Red";
+            this.lblComputedCarColor.Text = "No Color";
             // 
             // lblCarColor
             // 
             this.lblCarColor.AutoSize = true;
-            this.lblCarColor.Location = new System.Drawing.Point(12, 61);
+            this.lblCarColor.Location = new System.Drawing.Point(9, 61);
             this.lblCarColor.Name = "lblCarColor";
-            this.lblCarColor.Size = new System.Drawing.Size(83, 13);
+            this.lblCarColor.Size = new System.Drawing.Size(113, 13);
             this.lblCarColor.TabIndex = 3;
-            this.lblCarColor.Text = "The car color is:";
+            this.lblCarColor.Text = "The future car color is:";
             // 
             // txtDays
             // 
@@ -158,6 +158,7 @@
             this.Name = "frmComputeCarColor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compute Car Color";
+            this.Load += new System.EventHandler(this.frmComputeCarColor_Load);
             this.grpStartingPoint.ResumeLayout(false);
             this.grpStartingPoint.PerformLayout();
             this.grpGetCarColor.ResumeLayout(false);
