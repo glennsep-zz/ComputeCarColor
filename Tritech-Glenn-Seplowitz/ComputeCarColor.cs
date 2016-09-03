@@ -40,11 +40,7 @@ namespace Tritech_Glenn_Seplowitz
             int carColorIndex = 0;                                                  // the index to locate car color from list of car colors
 
             // get monday's date from today's date as our starting point
-            if (startingDate.DayOfWeek.ToString() != "Monday")
-            {
-                // find monday!
-                startingDate = FindMonday(startingDate);
-            }
+            startingDate = FindMonday(startingDate);
 
             // now add the number of days in the future to the monday date
             futureDate = startingDate.AddDays(futureDays);
@@ -99,15 +95,23 @@ namespace Tritech_Glenn_Seplowitz
             return carColor;
         }
 
+        /// <summary>
+        /// Find the prior date that starts on a monday using a starting date (normally today's date)
+        /// </summary>
+        /// <param name="startingDate"></param>
+        /// <returns></returns>
         public static DateTime FindMonday(DateTime startingDate)
         {
             // declare variables
             int dayOfWeek = 0;                                                      // the day of the week as an integer
 
-            // find monday!
-            // get the current day of the week
-            dayOfWeek = (int)startingDate.DayOfWeek;
-            startingDate = startingDate.AddDays(dayOfWeek == 0 ? -6 : -1 * (dayOfWeek - 1));
+            // find monday if it isn't monday already
+            if (startingDate.DayOfWeek.ToString() != "Monday")
+            {
+                // get the current day of the week
+                dayOfWeek = (int)startingDate.DayOfWeek;
+                startingDate = startingDate.AddDays(dayOfWeek == 0 ? -6 : -1 * (dayOfWeek - 1));
+            }
 
             // return the date the starts on Monday
             return startingDate;

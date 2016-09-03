@@ -106,12 +106,8 @@ namespace Tritech_Glenn_Seplowitz
             DateTime startingDate = DateTime.Now;
 
             // get monday's date from today's date
-            if (startingDate.DayOfWeek.ToString() != "Monday")
-            {
-                // find monday!
-                startingDate = ComputeCarColor.FindMonday(startingDate);
-            }
-
+            startingDate = ComputeCarColor.FindMonday(startingDate);
+           
             // set the text in the starting point
             lblStartPoint.Text = "Assume today is " + startingDate.ToLongDateString() + " and the car color is currently: ";
         }
