@@ -42,7 +42,6 @@ namespace Tritech_Glenn_Seplowitz
             if (message != string.Empty)
             {
                 MessageBox.Show(message, "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDays.Focus();
             }
             else
             {
@@ -89,6 +88,11 @@ namespace Tritech_Glenn_Seplowitz
                         break;
                 }
             }
+
+            // select text and set focus to future days text box
+            txtDays.SelectionStart = 0;
+            txtDays.SelectionLength = txtDays.Text.Length;
+            txtDays.Focus();
         }
 
         /// <summary>
@@ -100,15 +104,12 @@ namespace Tritech_Glenn_Seplowitz
         {
             // declare variables
             DateTime startingDate = DateTime.Now;
-            int dayOfWeek = 0;
 
             // get monday's date from today's date
             if (startingDate.DayOfWeek.ToString() != "Monday")
             {
                 // find monday!
-                // get the current day of the week
-                dayOfWeek = (int)startingDate.DayOfWeek;
-                startingDate = startingDate.AddDays(dayOfWeek == 0 ? -6 : -1 * (dayOfWeek - 1));
+                startingDate = ComputeCarColor.FindMonday(startingDate);
             }
 
             // set the text in the starting point

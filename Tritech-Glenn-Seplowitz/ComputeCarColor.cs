@@ -33,7 +33,6 @@ namespace Tritech_Glenn_Seplowitz
             string carColor = string.Empty;                                         // the car color 
             DateTime startingDate = DateTime.Now;                                   // determine Monday's date by using today's date
             DateTime futureDate;                                                    // the date in the future
-            int dayOfWeek = 0;                                                      // the day of the week as an integer
             int numberOfWeeks = 0;                                                  // the number of weeks between start and future dates
             int daysLost = 0;                                                       // the number of days lost in the future weeks
             int daysWithoutWeekend = 0;                                             // the future day without including the weekends
@@ -44,9 +43,7 @@ namespace Tritech_Glenn_Seplowitz
             if (startingDate.DayOfWeek.ToString() != "Monday")
             {
                 // find monday!
-                // get the current day of the week
-                dayOfWeek = (int)startingDate.DayOfWeek;
-                startingDate =  startingDate.AddDays(dayOfWeek == 0 ? -6 : -1 * (dayOfWeek-1));
+                startingDate = FindMonday(startingDate);
             }
 
             // now add the number of days in the future to the monday date
@@ -85,14 +82,7 @@ namespace Tritech_Glenn_Seplowitz
                     }
                     else
                     {
-                        for (int i = daysWithoutWeekend - 1; i >= 0; i--)
-                        {
-                            if (i % 7 == 0)
-                            {
-                                futureDayDivisibleBy7 = i;
-                                break;
-                            }
-                        }
+                        futureDayDivisibleBy7 = daysWithoutWeekend - (daysWithoutWeekend % 7);
                     }
 
                     // now subtract the future day without weekends that is divible by 7 (red car) from take the future days without weekend
@@ -107,6 +97,20 @@ namespace Tritech_Glenn_Seplowitz
             // return the car color
             futureDateOut = futureDate;
             return carColor;
+        }
+
+        public static DateTime FindMonday(DateTime startingDate)
+        {
+            // declare variables
+            int dayOfWeek = 0;                                                      // the day of the week as an integer
+
+            // find monday!
+            // get the current day of the week
+            dayOfWeek = (int)startingDate.DayOfWeek;
+            startingDate = startingDate.AddDays(dayOfWeek == 0 ? -6 : -1 * (dayOfWeek - 1));
+
+            // return the date the starts on Monday
+            return startingDate;
         }
 
         #endregion
