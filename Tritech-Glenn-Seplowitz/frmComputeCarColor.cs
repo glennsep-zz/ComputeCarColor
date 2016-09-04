@@ -42,7 +42,7 @@ namespace Tritech_Glenn_Seplowitz
             // first validate the day entry
             // if an error was found then display it
             message = Common.ValidateDaysEntry(txtDays, out numberDays);
-            if (message != string.Empty)
+            if (message != String.Empty)
             {
                 MessageBox.Show(message, "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

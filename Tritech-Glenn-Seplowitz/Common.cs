@@ -15,7 +15,7 @@ namespace Tritech_Glenn_Seplowitz
         {
             // declare variables
             StringBuilder message = new StringBuilder();
-            string carColor = string.Empty;
+            string carColor = String.Empty;
             string daysAsText = txtDays.Text;
 
             // first let's do some validation
@@ -23,7 +23,7 @@ namespace Tritech_Glenn_Seplowitz
             if (daysAsText.Trim().Length == 0)
             {
                 message.Append("Must enter number of days." + Environment.NewLine);
-                txtDays.Text = string.Empty;
+                txtDays.Text = String.Empty;
             }
 
             // check if the days entered is a number
