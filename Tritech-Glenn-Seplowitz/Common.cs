@@ -45,6 +45,15 @@ namespace Tritech_Glenn_Seplowitz
             return message.ToString();
         }
 
+        /// <summary>
+        /// Handles any errors by displaying the error
+        /// </summary>
+        /// <param name="ex"></param>
+        public static void HandleError(Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         #endregion
     }
 }
