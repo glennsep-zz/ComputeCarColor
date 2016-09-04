@@ -76,20 +76,20 @@ namespace Tritech_Glenn_Seplowitz
             // 4. If the future date falls on a Saturday or Sunday then "No Color" is returned.
             // 5. If the days in the future is between 0 and 4 inclusive then the routine passes in the index to the color list and returns the color.
             // 6. If the days in the future is greater then 4 we first need to compute the "Future Days without Weekends"
-            // a. This is done by taking the future days passed into the routine and determining the number of weeks that fall within the future days.
-            // for example if the future days is 21 then this equates to 3 weeks.
-            // b. once the number of weeks is determined we need to count the number of saturdays and sundays.
-            // so for 1 week there is always a Saturday and Sunday.  This is 2 days that we don't want to include
-            // so if we have 3 weeks there are six days we dont want to include.  That is 3 weeks * 2 days (Saturday and Sunday).  This gives us 6 days.
-            // c. Once we have the number of days not to include we subtract this number from the future days passed into the routine.
-            // this gives us the "Future Days without Weekends" column. In this case the future days is 21.  We subtract 6 to get 15 for 
-            // "Future Days Without Weekends"
+            //      a. This is done by taking the future days passed into the routine and determining the number of weeks that fall within the future days.
+            //          for example if the future days is 21 then this equates to 3 weeks.
+            //      b. once the number of weeks is determined we need to count the number of saturdays and sundays.
+            //          so for 1 week there is always a Saturday and Sunday.  This is 2 days that we don't want to include
+            //          so if we have 3 weeks there are six days we dont want to include.  That is 3 weeks * 2 days (Saturday and Sunday).  This gives us 6 days.
+            //      c. Once we have the number of days not to include we subtract this number from the future days passed into the routine.
+            //          this gives us the "Future Days without Weekends" column. In this case the future days is 21.  We subtract 6 to get 15 for 
+            //          "Future Days Without Weekends"
             // 7. The table above shows that every "Future Days without Weekends that is divisble by 7 starts with the color Red.
-            // So the days of 7 and 14 start with red.
+            //      So the days of 7 and 14 start with red.
             // 8. Based on the "Future Days Without Weekends" we determine where the prior number that is divsible by 7.
-            // so if the "Future Days Without Weekends" is 15 then the number prior to 15 that is divisible by 7 would be 14.
+            //      so if the "Future Days Without Weekends" is 15 then the number prior to 15 that is divisible by 7 would be 14.
             // 9. We then determine the index in the car color list by subtracting the number divisble by 7 from the "Future Days Without Weekends" 
-                // that syncs with future days
+            //      that syncs with future days
             // 10.  We then use this index to get the color.
 
             // so let's say the user enters in a future day of 15.
