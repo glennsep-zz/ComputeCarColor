@@ -82,11 +82,12 @@ namespace Tritech_Glenn_Seplowitz
                             // so for 1 week there is always a Saturday and Sunday.  This is 2 days that we don't want to include
                             // so if we have 3 weeks there are six days we dont want to include.  That is 3 weeks * 2 days (Saturday and Sunday).  This gives us 6 days.
                     // c. Once we have the number of days not to include we subtract this number from the future days passed into the routine.
-                            // this gives us the "Future Days without Weekends" column.
+                            // this gives us the "Future Days without Weekends" column. In this case the future days is 21.  We subtract 6 to get 15 for 
+                            // "Future Days Without Weekends"
             // 7. The table above shows that every "Future Days without Weekends that is divisble by 7 starts with the color Red.
                     // So the days of 7 and 14 start with red.
             // 8. Based on the "Future Days Without Weekends" we determine where the prior number that is divsible by 7.
-                    // so if the "Future Days Without Weekends" is 12 then the number divisible by 7 would by 7.
+                    // so if the "Future Days Without Weekends" is 15 then the number prior to 15 that is divisible by 7 would be 14.
             // 9. We then determine the index in the car color list by subtracting the number divisble by 7 from the "Future Days Without Weekends" that syncs with future days
             // 10.  We then use this index to get the color.
 
