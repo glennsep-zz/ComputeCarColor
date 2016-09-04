@@ -12,6 +12,9 @@ namespace Tritech_Glenn_Seplowitz
 {
     public partial class frmComputeCarColor : Form
     {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public frmComputeCarColor()
         {
             InitializeComponent();
@@ -51,6 +54,7 @@ namespace Tritech_Glenn_Seplowitz
                 // display the car color
                 lblCarColor.Text = "The future car color for " + futureDate.ToLongDateString() + " is: "; 
                 lblComputedCarColor.Text = carColor;
+                lblComputedCarColor.BackColor = SystemColors.Control;
 
                 switch (carColor)
                 {
@@ -64,6 +68,7 @@ namespace Tritech_Glenn_Seplowitz
 
                     case "Yellow":
                         lblComputedCarColor.ForeColor = Color.Yellow;
+                        lblComputedCarColor.BackColor = Color.Black;
                         break;
 
                     case "Green":
