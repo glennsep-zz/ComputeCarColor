@@ -143,7 +143,14 @@ namespace Tritech_Glenn_Seplowitz
         /// <returns></returns>
         public static DateTime GetFutureDate(DateTime startingDate, int futureDays)
         {
-            return startingDate.AddDays(futureDays);
+            try
+            {
+                return startingDate.AddDays(futureDays);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         #endregion

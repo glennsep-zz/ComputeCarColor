@@ -129,7 +129,14 @@ namespace Tritech_Glenn_Seplowitz
                 startingDate = ComputeCarColor.FindMonday(startingDate);
 
                 // set the text in the starting point
-                lblStartPoint.Text = "Assume today is " + startingDate.ToLongDateString() + " and the car color is currently: ";
+                if (DateTime.Now.DayOfWeek.ToString() == "Monday")
+                {
+                    lblStartPoint.Text = "Today is " + startingDate.ToLongDateString() + " and the car color is currently: ";
+                }
+                else
+                {
+                    lblStartPoint.Text = "Assume today is " + startingDate.ToLongDateString() + " and the car color is currently: ";
+                }
             }
             catch (Exception ex)
             {
